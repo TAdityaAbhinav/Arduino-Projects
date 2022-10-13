@@ -1,8 +1,8 @@
 
 
-#define BLYNK_TEMPLATE_ID "TMPLkp1f3oyC"
-#define BLYNK_DEVICE_NAME "LED"
-#define BLYNK_AUTH_TOKEN "9zUv1Xeqro47MYio1Ts5b7GUOk0aJV1P"
+#define BLYNK_TEMPLATE_ID "TMPLkp1f3oyC"  // Template ID
+#define BLYNK_DEVICE_NAME "LED"  // Device name
+#define BLYNK_AUTH_TOKEN ""  // Auth Token
 
 
 #define BLYNK_PRINT Serial
@@ -12,8 +12,8 @@
 
 int pin = 2;
 char auth[] = BLYNK_AUTH_TOKEN;     // You should get Auth Token in the Blynk App.
-char ssid[] = "One plus 8";                    // Your Wi-Fi Credentials
-char pass[] = "Surekha@2";
+char ssid[] = "";                    // Your Wi-Fi Credentials
+char pass[] = "";
 void setup() {  
   Serial.begin(115200);
   delay(10);
