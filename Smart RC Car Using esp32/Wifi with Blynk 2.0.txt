@@ -1,0 +1,35 @@
+
+
+#define BLYNK_TEMPLATE_ID "TMPLkp1f3oyC"
+#define BLYNK_DEVICE_NAME "LED"
+#define BLYNK_AUTH_TOKEN "9zUv1Xeqro47MYio1Ts5b7GUOk0aJV1P"
+
+
+#define BLYNK_PRINT Serial
+#include <WiFi.h>
+#include <WiFiClient.h>
+#include <BlynkSimpleEsp32.h>
+
+int pin = 2;
+char auth[] = BLYNK_AUTH_TOKEN;     // You should get Auth Token in the Blynk App.
+char ssid[] = "One plus 8";                    // Your Wi-Fi Credentials
+char pass[] = "Surekha@2";
+void setup() {  
+  Serial.begin(115200);
+  delay(10);
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
+  WiFi.begin(ssid, pass);
+  int wifi_ctr = 0;
+  while (WiFi.status() != WL_CONNECTED) {
+  delay(500);
+  Serial.print(".");
+  }
+  Serial.println("WiFi connected");  
+  Blynk.begin(auth, ssid, pass);
+  pinMode(pin, OUTPUT); 
+}
+void loop(){
+    Blynk.run();
+}
+ 
